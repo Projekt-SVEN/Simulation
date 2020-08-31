@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Roomplan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="F:\Unity\SVENSimulation\Assets\Roomdefinition\Schema_Raum.xsd">
+	<Room>
+		<Height>5</Height>
+		<Width>5</Width>
+		<ThermalPixelSize>0.1</ThermalPixelSize>
+		<WallThickness>1</WallThickness>
+    <WallVertexDisatnce>5</WallVertexDisatnce>
+    <VertexObjectOffSet>0.05</VertexObjectOffSet>
+	</Room>
+  <Furniture>
+    <Table>
+      <Position>
+        <Height>3.6</Height>
+        <Width>2</Width>
+      </Position>
+      <Size>
+        <Height>0.8</Height>
+        <Width>1.6</Width>
+      </Size>
+      <Rotation>-90</Rotation>
+      <Type>Student</Type>
+    </Table>
+    <Table>
+      <Position>
+        <Height>2</Height>
+        <Width>2.8</Width>
+      </Position>
+      <Size>
+        <Height>0.8</Height>
+        <Width>1.6</Width>
+      </Size>
+      <Rotation>0</Rotation>
+      <Type>Student</Type>
+    </Table>
+  </Furniture>
+</Roomplan>

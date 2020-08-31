@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Roomplan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Room" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Height">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Width">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ThermalPixelSize">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="WallThickness">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="WallVertexDisatnce">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="VertexObjectOffSet">
+								<xs:simpleType>
+									<xs:restriction base="xs:decimal"></xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Furniture" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Window" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation">
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Closed"/>
+													<xs:enumeration value="Open"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Door" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation">
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Open"/>
+													<xs:enumeration value="Closed"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Chair" minOccurs="0" maxOccurs="unbounded"> 
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation">
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Normal"/>
+													<xs:enumeration value="Dozent"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Table" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/> <!-- Defiens the Position of the right Part of the Tabel -->
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation"> <!-- Positive Value = rotation counter clockwies-->
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element><xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Dozent"/>
+													<xs:enumeration value="Student"/>
+													<xs:enumeration value="Blank"/>
+													<xs:enumeration value="Lecurehall"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>							
+							</xs:element>
+							<xs:element name="Heater" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation"> <!-- Positive Value = rotation counter clockwies-->
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element><xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Default"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>							
+							</xs:element>
+							<xs:element name="Closet" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation"> <!-- Positive Value = rotation counter clockwies-->
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element><xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Default"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>							
+							</xs:element>
+							<xs:element name="Tablet" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation"> <!-- Positive Value = rotation counter clockwies-->
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element><xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Default"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>							
+							</xs:element>
+							<xs:element name="Thermometer" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Position" type="Pos"/>
+										<xs:element name="Size" type="Pos"/>
+										<xs:element name="Rotation"> <!-- Positive Value = rotation counter clockwies-->
+											<xs:simpleType>
+												<xs:restriction base="xs:decimal"/>
+											</xs:simpleType>
+										</xs:element><xs:element name="Type">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Default"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Get">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="FHEM-Name-Set">
+											<xs:simpleType>
+												<xs:restriction base="xs:string"/>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>							
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Pos"> 
+		<xs:sequence>
+			<xs:element name="Height">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Width">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
